@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(#FFDC80 , #fa7e1e,#d62976,#962fbf ,#4f5bd5);
+}
+.card{
+    position: relative;
+    width: 300px;
+    height: 400px;
+    background: linear-gradient(45deg , #fdaa61 , #ff5acd);
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+    box-shadow: 10px 20px 40px rgba(0,0,0,.25);
+    transition: 1s;
+}
+.card:hover{
+    transform: translateX(50%);
+}
+.card .imgBox{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    transform-origin: left;
+    transform-style: preserve-3d;
+    background: #000;
+    transition: 1s;
+}
+.card:hover .imgBox{
+   transform: rotateY(-180deg);
+}
+.card .imgBox img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+}
+.card .imgBox img:nth-child(2){
+    transform: rotateY(180deg);
+}
+
+.card .details{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card .details .content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.card .details .content h2{
+    text-align: center;
+    line-height: 1em;
+    font-weight: 700;
+    color: #333;
+    font-family: 'Courgette', cursive;
+}
+.card .details .content h2 span{
+    font-size: 0.8em;
+    color: #000;
+    font-family: 'Roboto', sans-serif;
+}
+.card .details .content .social-icons{
+    position: relative;
+    display: flex;
+    margin-top: 15px;
+}
+.card .details .content .social-icons a{
+    width: 35px;
+    height: 35px;
+    text-decoration: none;
+    background: #333;
+    color : #fff ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    font-size: 18px;
+    transition: 0.2s;
+}
+.card .details .content .social-icons a:hover{
+    background: #e21212;
+}
+
+
+
